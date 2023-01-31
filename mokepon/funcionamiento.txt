@@ -1,0 +1,6 @@
+JUEGO:
+creamos un juego donde se podra elegir una mascota y luego un ataque
+
+CODIGO: 
+separamos la estructura en dos secciones con las etiquetas <section>, y les asignamos
+diferentes ID para que tengas distintos estilos.
