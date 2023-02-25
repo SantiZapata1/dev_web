@@ -1,5 +1,6 @@
 JUEGO:
-creamos un juego donde se podra elegir una mascota y luego un ataque
+- creamos un juego donde se podra elegir una mascota y luego un ataque
+- el fuego gana a la tierra, la tierra al agua y el agua al fuego 
 
 CODIGO: 
 separamos la estructura en dos secciones con las etiquetas <section>, y les asignamos

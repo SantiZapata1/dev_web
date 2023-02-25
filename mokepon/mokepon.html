@@ -23,7 +23,7 @@
         <label for="ratigueya">ratigueya</label>
         <input type="radio" name="mascota" id="ratigueya">
 
-        <button>seleccionar</button>
+        <button id="boton-mascota">seleccionar</button>
 
     </section>
 
@@ -31,20 +31,20 @@
 
         <h2>Elige tu ataque:</h2>
 
-        <p>Tu mascota tiene <span></span> vidas</p>
-        <p>La mascota de tu enemigo tiene <span></span> vidas</p>
+        <p>Tu mascota <span id="mascota-jugador"></span> tiene <span></span> vidas</p>
+        <p>La mascota <span id="mascota-enemigo"> </span> de tu enemigo tiene <span></span> vidas</p>
 
         <p>
-            <button>fuego 🔥</button>
-            <button>agua 🌊</button>
-            <button>tierra 🌱</button>
+            <button id="boton-fuego">fuego 🔥</button>
+            <button id="boton-agua">agua 🌊</button>
+            <button id="boton-tierra">tierra 🌱</button>
     
         </p>
 
     </section>
 
     <section id="mensajes">
-        <p></p>
+        <p>elegiste el ataque <span id="ataqueJugador"></span>  y tu enemigo <span id="ataqueEnemigo"></span>  </p>
     </section>
 
     <section id="reiniciar">
