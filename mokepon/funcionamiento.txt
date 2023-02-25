@@ -1,7 +1,37 @@
 JUEGO:
-- creamos un juego donde se podra elegir una mascota y luego un ataque
+
+- creamos un juego donde se puede elegir una mascota y un ataque, y de forma
+aleatoria se elige la mascota enemiga y su ataque, segun los ataque de cada uno
+hay un ganador y un perdedor
+
 - el fuego gana a la tierra, la tierra al agua y el agua al fuego 
 
 CODIGO: 
-separamos la estructura en dos secciones con las etiquetas <section>, y les asignamos
-diferentes ID para que tengas distintos estilos.
+
+-Tenemos un archivo HTML en donde tenemos la estructura de nuestra pagina web, que se
+divide en 4 secciones principales:
+
+-elegir mascota
+-elegir ataque
+-resultado
+-reiniciar
+
+y cada etiqueta tiene un ID que mediante este los hacemos dinamicos mediante javascript
+
+- por otro lado tenemos un archivo javascript en donde tenemos toda la logica del juego
+estan divididas en funciones que algunas de anidan para que mediante un evento internamente 
+suceden varias otras funciones. 
+
+En primer lugar usamos un metodo que se llama "window.addEventListener()" que mediante este
+esperamos que el codigo HTML cargue primero, y luego recien ejecutamos el archivo .js
+
+luego, mediante el metodo "document.getElementById("ID")" guardamos en una variable lo que
+tenga esta etiqueta HTML, y vamos cambiando sus valores a traves de otro metodo llamado
+"innerHTML".
+
+A su vez, usamos "appendChild" para crear diferentes parrafos de mensaje segun el resultado 
+de la pelea.
+
+Una vez que nosotros elegimos la mascota y el ataque, lo mismo pero del enemigo el programa
+lo selecciona de forma aleatoria
+

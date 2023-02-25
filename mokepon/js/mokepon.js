@@ -120,7 +120,7 @@ function crearMensaje(resultado){
 
     seccionMensajes.appendChild(parrafo)
 
-}
+} 
 
 
 
