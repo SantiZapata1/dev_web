@@ -1,6 +1,10 @@
 let ataqueJugador
 let ataqueEnemigo
 
+
+//mediante este metodo del navegador, recien ejecutamos las funciones cuando el html haya cargado
+window.addEventListener("load",iniciarJuego)
+
 function iniciarJuego(){
     //guardamos en una variable lo que almacene el boton con ese id
     let botonMascotaJugador = document.getElementById("boton-mascota")
@@ -85,19 +89,39 @@ function ataqueAleatorioEnemigo(){
 
     if(ataqueAleatorio==1){
         ataqueEnemigo= "fuego"
-
     }else if(ataqueAleatorio==2){
         ataqueEnemigo= "agua"
     }else{
         ataqueEnemigo="tierra"
 
     }
-    ataqueEnemigo= document.getElementById("ataque-enemigo")
-    ataqueEnemigo.innerHTML=ataqueEnemigo
+
+    combate()
 
 
 }
+function combate(){
 
-//mediante este metodo del navegador, recien ejecutamos las funciones cuando el html haya cargado
-window.addEventListener("load",iniciarJuego)
+    if(ataqueJugador==ataqueEnemigo){
+        crearMensaje("empate");
+    }else if(ataqueEnemigo=="fuego" && ataqueJugador=="agua"||ataqueEnemigo=="agua" && ataqueJugador=="tierra"|| ataqueEnemigo=="tierra" && ataqueJugador =="fuego"){
+        crearMensaje("ganaste");
+    }else if(ataqueJugador=="fuego" && ataqueEnemigo=="agua"||ataqueJugador=="agua" && ataqueEnemigo=="tierra"||ataqueJugador=="tierra" && ataqueEnemigo =="fuego"){
+        crearMensaje("perdiste");
+    }
+
+}
+
+function crearMensaje(resultado){
+
+    let seccionMensajes=document.getElementById("mensajes")
+    let parrafo = document.createElement("p")
+    parrafo.innerHTML="tu mascota ataco con " + ataqueJugador + " y tu enemigo con "+ ataqueEnemigo + "-" + resultado
+
+    seccionMensajes.appendChild(parrafo)
+
+}
+
+
+
 
