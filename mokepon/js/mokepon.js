@@ -1,5 +1,7 @@
 let ataqueJugador
 let ataqueEnemigo
+let vidasEnemigo = 3
+let vidasJugador = 3
 
 
 //mediante este metodo del navegador, recien ejecutamos las funciones cuando el html haya cargado
@@ -102,16 +104,46 @@ function ataqueAleatorioEnemigo(){
 }
 function combate(){
 
+    let spanVidasJugador=document.getElementById("vidas-jugador")
+    let spanVidasEnemigo=document.getElementById("vidas-enemigo")
+
+
     if(ataqueJugador==ataqueEnemigo){
         crearMensaje("empate");
     }else if(ataqueEnemigo=="fuego" && ataqueJugador=="agua"||ataqueEnemigo=="agua" && ataqueJugador=="tierra"|| ataqueEnemigo=="tierra" && ataqueJugador =="fuego"){
-        crearMensaje("ganaste");
+        crearMensaje("ganaste ✅");
+        vidasEnemigo--
+        spanVidasEnemigo.innerHTML = vidasEnemigo
     }else if(ataqueJugador=="fuego" && ataqueEnemigo=="agua"||ataqueJugador=="agua" && ataqueEnemigo=="tierra"||ataqueJugador=="tierra" && ataqueEnemigo =="fuego"){
-        crearMensaje("perdiste");
+        crearMensaje("perdiste ❌");
+        vidasJugador--
+        spanVidasJugador.innerHTML = vidasJugador
     }
+
+    revisarVidas()
 
 }
 
+function revisarVidas(){
+
+    if(vidasJugador==0){
+        crearMensajeFinal("lo siento, PERDISTE 😭")
+
+    }else if(vidasEnemigo==0){
+        crearMensajeFinal("felicitaciones, GANASTE 😁")
+
+
+    }
+}
+function crearMensajeFinal(resultadoFinal){
+
+    let seccionMensajes=document.getElementById("mensajes")
+    let parrafo = document.createElement("p")
+    parrafo.innerHTML=resultadoFinal
+
+    seccionMensajes.appendChild(parrafo)
+
+} 
 function crearMensaje(resultado){
 
     let seccionMensajes=document.getElementById("mensajes")
