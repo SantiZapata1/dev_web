@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap');
+
+body{
+    font-family: 'Tilt Warp', cursive;
+    background-color: #6096B4;
+}
+.titulo{
+    color: white;
+    font-size: 60px;
+}
+.subtitulo{
+    color: white;
+    font-size: 32px;
+}
+
+#seleccionar-mascota{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+
+.tarjetas{
+    display: flex; /* para poner las cajas una al lado de la otra*/
+    gap: 60px; /*separacion entre las tarjetas*/
+}
+
+.tarjeta-de-mokepon{
+    width: 300px;
+    height: 220px;
+    background-color: #93BFCF;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px;
+    border: 2px solid black;
+    border-radius: 20px;
+    display: flex;
+
+}
+.tarjeta-de-mokepon img{
+    width: 200px;
+    display: flex;
+}
+
+input{
+    display: none;/*para que no se muestren*/
+}
+
+button{
+    background-color: #93BFCF;
+    width:100px;
+    height: 30px;
+    border: 1px solid black;
+}
+
+.boton-seleccionar{
+    background-color: #93BFCF;
+    width:300px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 20px;
+    font-family: 'Tilt Warp', cursive;
+    font-size: 20px;
+
+}
+
+#seleccionar-ataque{
+    flex-direction: column;
+    align-items: center;
+}
+
+.boton-ataque{
+    background-color: #93BFCF;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 20px;
+    font-family: 'Tilt Warp', cursive;
+    font-size: 20px;
+    width:130px;
+
+}
+

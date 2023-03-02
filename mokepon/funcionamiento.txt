@@ -29,9 +29,30 @@ luego, mediante el metodo "document.getElementById("ID")" guardamos en una varia
 tenga esta etiqueta HTML, y vamos cambiando sus valores a traves de otro metodo llamado
 "innerHTML".
 
-A su vez, usamos "appendChild" para crear diferentes parrafos de mensaje segun el resultado 
+A su vez, usamos "appendChild" para crear diferentes parrafos de  mensaje segun el resultado 
 de la pelea.
 
 Una vez que nosotros elegimos la mascota y el ataque, lo mismo pero del enemigo el programa
 lo selecciona de forma aleatoria
+
+Usamos location.reload para reiniciar el juego
+con el metodo ".disabled" desabilitamos los botones
+
+y con "style.display=" " " mostramos u ocultalos elementos HTML
+
+css
+
+con este lenguaje le damos estilo a nuestra pagina
+hay 3 formas de estilizar selectores:
+
+-tipo
+-clase .
+-ID #
+
+propiedades:
+-width: ancho
+-height: alto
+
+flexbox: nos ayuda a ordenar nuestros elementos padres e hijos de la pagina web, segun su rango
+estos elementos tienen distintas propiedades
 

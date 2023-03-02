@@ -8,26 +8,40 @@ let vidasJugador = 3
 window.addEventListener("load",iniciarJuego)
 
 function iniciarJuego(){
-    //guardamos en una variable lo que almacene el boton con ese id
+
+    let seccionSeleccionarAtaque = document.getElementById("seleccionar-ataque")
+    seccionSeleccionarAtaque.style.display="none"
+
+    let seccionBotonReiniciar = document.getElementById("boton-reiniciar")
+    seccionBotonReiniciar.style.display="none"
+
     let botonMascotaJugador = document.getElementById("boton-mascota")
-    //especificamos cual es el evento que nos interesa usar y que va a pasar cuando eso suceda
     botonMascotaJugador.addEventListener("click",seleccionarMascotaJugador)
 
-    let botonFuego = document.getElementById("boton-fuego")
-    botonFuego.addEventListener("click",ataqueFuego)
 
-    let botonAgua = document.getElementById("boton-agua")
-    botonAgua.addEventListener("click",ataqueAgua)
+        let botonFuego = document.getElementById("boton-fuego")
+        botonFuego.addEventListener("click",ataqueFuego)
 
-    let botonTierra = document.getElementById("boton-tierra")
-    botonTierra.addEventListener("click",ataqueTierra)
+        let botonAgua = document.getElementById("boton-agua")
+        botonAgua.addEventListener("click",ataqueAgua)
 
+        let botonTierra = document.getElementById("boton-tierra")
+        botonTierra.addEventListener("click",ataqueTierra)
 
+        let botonReiniciar = document.getElementById("boton-reiniciar")
+        botonReiniciar.addEventListener("click",reiniciarJuego)
 
 }
 
 //en esta funcion, evaluamos que input esta seleccionado
 function seleccionarMascotaJugador(){
+
+    let seccionSeleccionarAtaque = document.getElementById("seleccionar-ataque")
+    seccionSeleccionarAtaque.style.display="flex"
+
+
+    let seccionSeleccionarMascota = document.getElementById("seleccionar-mascota")
+    seccionSeleccionarMascota.style.display="none"
 
     let inputHipodoge=document.getElementById("hipodoge")
     let inputCapipepo=document.getElementById("capipepo")
@@ -102,6 +116,7 @@ function ataqueAleatorioEnemigo(){
 
 
 }
+
 function combate(){
 
     let spanVidasJugador=document.getElementById("vidas-jugador")
@@ -131,9 +146,9 @@ function revisarVidas(){
 
     }else if(vidasEnemigo==0){
         crearMensajeFinal("felicitaciones, GANASTE 😁")
-
-
     }
+    
+
 }
 function crearMensajeFinal(resultadoFinal){
 
@@ -142,6 +157,19 @@ function crearMensajeFinal(resultadoFinal){
     parrafo.innerHTML=resultadoFinal
 
     seccionMensajes.appendChild(parrafo)
+
+    let botonFuego = document.getElementById("boton-fuego")
+    botonFuego.disabled=true
+
+    let botonAgua = document.getElementById("boton-agua")
+    botonAgua.disabled=true
+
+    let botonTierra = document.getElementById("boton-tierra")
+    botonTierra.disabled=true 
+
+
+    let seccionBotonReiniciar = document.getElementById("boton-reiniciar")
+    seccionBotonReiniciar.style.display="block"
 
 } 
 function crearMensaje(resultado){
@@ -153,6 +181,11 @@ function crearMensaje(resultado){
     seccionMensajes.appendChild(parrafo)
 
 } 
+function reiniciarJuego(){
+
+    location.reload()
+
+}
 
 
 
